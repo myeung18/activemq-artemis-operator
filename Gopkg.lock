@@ -26,19 +26,21 @@
   revision = "de5bf2ad457846296e2031421a34e2568e304e35"
 
 [[projects]]
-  digest = "1:90eedc18e7dec17773aea9f00974b3b9e3fab6dee47dd868547f2962f4bd1000"
+  digest = "1:91b3b2f035f42cd6f2a154970ea2eb6f1088e2f4b5d87cb68795f4241538415f"
   name = "github.com/RHsyseng/operator-utils"
   packages = [
+    "internal/platform",
     "pkg/olm",
     "pkg/resource",
     "pkg/resource/compare",
     "pkg/resource/read",
     "pkg/resource/write",
     "pkg/resource/write/hooks",
+    "pkg/utils/openshift",
     "pkg/validation",
   ]
   pruneopts = "NT"
-  revision = "942a3f9c85a9638585c45cb90af49a08fac6e22d"
+  revision = "07e65f1aadddfe0d8a180c723ba810de359b1260"
 
 [[projects]]
   digest = "1:680b63a131506e668818d630d3ca36123ff290afa0afc9f4be21940adca3f27d"
@@ -103,6 +105,19 @@
   pruneopts = "NT"
   revision = "026c730a0dcc5d11f93f1cf1cc65b01247ea7b6f"
   version = "v4.5.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:61d6d397b608e396fd1483c6b1e247630b7a00fda74bd20b6361686dc83c60be"
+  name = "github.com/fgiorgetti/qpid-dispatch-go-tests"
+  packages = [
+    "pkg/framework",
+    "pkg/framework/ginkgowrapper",
+    "pkg/framework/log",
+    "test",
+  ]
+  pruneopts = "NT"
+  revision = "c3f992ce0eee07c0713003efa3ab6df59261f59c"
 
 [[projects]]
   digest = "1:81466b4218bf6adddac2572a30ac733a9255919bc2f470b4827a317bd4ee1756"
@@ -330,12 +345,39 @@
   version = "v0.5.1"
 
 [[projects]]
+  digest = "1:76efa3b55850d9caa14f8c0b3a951797f9bc2ffc283526073dcad1b06b6e02d3"
+  name = "github.com/hpcloud/tail"
+  packages = [
+    ".",
+    "ratelimiter",
+    "util",
+    "watch",
+    "winfile",
+  ]
+  pruneopts = "NT"
+  revision = "a30252cb686a21eb2d0b98132633053ec2f7f1e5"
+  version = "v1.0.0"
+
+[[projects]]
   digest = "1:aaa38889f11896ee3644d77e17dc7764cc47f5f3d3b488268df2af2b52541c5f"
   name = "github.com/imdario/mergo"
   packages = ["."]
   pruneopts = "NT"
   revision = "7c29201646fa3de8506f701213473dd407f19646"
   version = "v0.3.7"
+
+[[projects]]
+  digest = "1:26d69fca0da1b07c757a8b81e76e6fc293f542aa83a14a57e9f13c838316ac79"
+  name = "github.com/interconnectedcloud/qdr-operator"
+  packages = [
+    "pkg/apis/interconnectedcloud/v1alpha1",
+    "pkg/client/clientset/versioned",
+    "pkg/client/clientset/versioned/scheme",
+    "pkg/client/clientset/versioned/typed/interconnectedcloud/v1alpha1",
+  ]
+  pruneopts = "NT"
+  revision = "3984fddc8ad8092a67ffe84b778f8e09ef14749e"
+  version = "1.2.0-beta1"
 
 [[projects]]
   digest = "1:f5b9328966ccea0970b1d15075698eff0ddb3e75889560aad2e9f76b289b536a"
@@ -406,16 +448,65 @@
   version = "1.0.1"
 
 [[projects]]
-  digest = "1:8bc8f43d2332d035857c92581df240f247c287629d5f60c751df609f9b6215c5"
+  digest = "1:048c7055e487eb0db9e76c00f60128ff212c893c348b982081ddd43fb889376f"
+  name = "github.com/onsi/ginkgo"
+  packages = [
+    ".",
+    "config",
+    "internal/codelocation",
+    "internal/containernode",
+    "internal/failer",
+    "internal/leafnodes",
+    "internal/remote",
+    "internal/spec",
+    "internal/spec_iterator",
+    "internal/specrunner",
+    "internal/suite",
+    "internal/testingtproxy",
+    "internal/writer",
+    "reporters",
+    "reporters/stenographer",
+    "reporters/stenographer/support/go-colorable",
+    "reporters/stenographer/support/go-isatty",
+    "types",
+  ]
+  pruneopts = "NT"
+  revision = "40598150331533e3cd497f21dcce387dae84b561"
+  version = "v1.12.0"
+
+[[projects]]
+  digest = "1:5c9d22f555c67f95dd405c7fcba6878eb221012582389411e5fcfcf194695a30"
+  name = "github.com/onsi/gomega"
+  packages = [
+    ".",
+    "format",
+    "internal/assertion",
+    "internal/asyncassertion",
+    "internal/oraclematcher",
+    "internal/testingtsupport",
+    "matchers",
+    "matchers/support/goraph/bipartitegraph",
+    "matchers/support/goraph/edge",
+    "matchers/support/goraph/node",
+    "matchers/support/goraph/util",
+    "types",
+  ]
+  pruneopts = "NT"
+  revision = "6be6c439588487cd908a3a700795660c2a16dfec"
+  version = "v1.9.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:c5ca00b20f45dfb7b9f0bcbb55d398a39fbe53386a56f97372dd383a1b51a5a8"
   name = "github.com/openshift/api"
   packages = [
     "apps/v1",
     "build/v1",
+    "console/v1",
     "route/v1",
   ]
   pruneopts = "NT"
-  revision = "0d921e363e951d89f583292c60d013c318df64dc"
-  version = "v3.9.0"
+  revision = "0f159fee64dbf711d40dac3fa2ec8b563a2aaca8"
 
 [[projects]]
   digest = "1:df8e741cd0f86087367f3bcfeb1cf237e96fada71194b6d4cee9412d221ec763"
@@ -613,6 +704,9 @@
   packages = [
     "context",
     "context/ctxhttp",
+    "html",
+    "html/atom",
+    "html/charset",
     "http/httpguts",
     "http2",
     "http2/hpack",
@@ -652,6 +746,16 @@
   packages = [
     "collate",
     "collate/build",
+    "encoding",
+    "encoding/charmap",
+    "encoding/htmlindex",
+    "encoding/internal",
+    "encoding/internal/identifier",
+    "encoding/japanese",
+    "encoding/korean",
+    "encoding/simplifiedchinese",
+    "encoding/traditionalchinese",
+    "encoding/unicode",
     "internal/colltab",
     "internal/gen",
     "internal/language",
@@ -659,7 +763,9 @@
     "internal/tag",
     "internal/triegen",
     "internal/ucd",
+    "internal/utf8internal",
     "language",
+    "runes",
     "secure/bidirule",
     "transform",
     "unicode/bidi",
@@ -701,6 +807,17 @@
   revision = "d88f79806bbd013f54a668506864ce559edf6f0a"
 
 [[projects]]
+  branch = "master"
+  digest = "1:325a1b73817aa79fc85f10376ed41ea607f7dd7f6c6bfa46df6a28ef2857941f"
+  name = "golang.org/x/xerrors"
+  packages = [
+    ".",
+    "internal",
+  ]
+  pruneopts = "NT"
+  revision = "9bdfabe68543c54f90421aeb9a60ef8061b5b544"
+
+[[projects]]
   digest = "1:d85bd4497eba4bba5620f30ba3b7bc3e2d5d73b85dd494eeb6ad79c73cdc23a3"
   name = "google.golang.org/appengine"
   packages = [
@@ -720,12 +837,29 @@
   version = "v1.6.0"
 
 [[projects]]
+  digest = "1:0914bf7efc3e3052163e92b859a89f3b407ad353d7c3b7f59a1bbb4fd05bb25d"
+  name = "gopkg.in/fsnotify.v1"
+  packages = ["."]
+  pruneopts = "NT"
+  revision = "45d7d09e39ef4ac08d493309fa031790c15bfe8a"
+  source = "https://github.com/fsnotify/fsnotify/archive/v1.4.7.tar.gz"
+  version = "v1.4.9"
+
+[[projects]]
   digest = "1:2d1fbdc6777e5408cabeb02bf336305e724b925ff4546ded0fa8715a7267922a"
   name = "gopkg.in/inf.v0"
   packages = ["."]
   pruneopts = "NT"
   revision = "d2d2541c53f18d2a059457998ce2876cc8e67cbf"
   version = "v0.9.1"
+
+[[projects]]
+  branch = "v1"
+  digest = "1:8fb1ccb16a6cfecbfdfeb84d8ea1cc7afa8f9ef16526bc2326f72d993e32cef1"
+  name = "gopkg.in/tomb.v1"
+  packages = ["."]
+  pruneopts = "NT"
+  revision = "dd632973f1e7218eb1089048e0798ec9ae7dceb8"
 
 [[projects]]
   digest = "1:18108594151654e9e696b27b181b953f9a90b16bf14d253dd1b397b025a1487f"
@@ -782,6 +916,9 @@
   packages = [
     "pkg/apis/apiextensions",
     "pkg/apis/apiextensions/v1beta1",
+    "pkg/client/clientset/clientset",
+    "pkg/client/clientset/clientset/scheme",
+    "pkg/client/clientset/clientset/typed/apiextensions/v1beta1",
   ]
   pruneopts = "NT"
   revision = "0fe22c71c47604641d9aa352c785b7912c200562"
@@ -842,6 +979,7 @@
   name = "k8s.io/client-go"
   packages = [
     "discovery",
+    "discovery/fake",
     "dynamic",
     "informers",
     "informers/admissionregistration",
@@ -1059,6 +1197,14 @@
   revision = "0cf8f7e6ed1d2e3d47d02e3b6e559369af24d803"
 
 [[projects]]
+  branch = "master"
+  digest = "1:bb5d31540492268dab044c21bdeec5cc3983247006ff821595fac5f90d6f9924"
+  name = "k8s.io/utils"
+  packages = ["exec"]
+  pruneopts = "NT"
+  revision = "2df71ebbae66f39338aed4cd0bb82d2212ee33cc"
+
+[[projects]]
   digest = "1:06035489efbd51ccface65fc878ceeb849aba05b2f9443c8993f363fc96e80ac"
   name = "sigs.k8s.io/controller-runtime"
   packages = [
@@ -1129,9 +1275,13 @@
     "github.com/RHsyseng/operator-utils/pkg/resource/compare",
     "github.com/RHsyseng/operator-utils/pkg/resource/read",
     "github.com/RHsyseng/operator-utils/pkg/resource/write",
+    "github.com/RHsyseng/operator-utils/pkg/utils/openshift",
     "github.com/RHsyseng/operator-utils/pkg/validation",
+    "github.com/fgiorgetti/qpid-dispatch-go-tests/test",
     "github.com/ghodss/yaml",
     "github.com/go-openapi/spec",
+    "github.com/onsi/ginkgo",
+    "github.com/onsi/gomega",
     "github.com/openshift/api/route/v1",
     "github.com/operator-framework/operator-sdk/pkg/k8sutil",
     "github.com/operator-framework/operator-sdk/pkg/leader",
@@ -1157,6 +1307,9 @@
     "k8s.io/apimachinery/pkg/util/intstr",
     "k8s.io/apimachinery/pkg/util/runtime",
     "k8s.io/apimachinery/pkg/util/wait",
+    "k8s.io/apimachinery/pkg/watch",
+    "k8s.io/client-go/discovery",
+    "k8s.io/client-go/discovery/fake",
     "k8s.io/client-go/informers",
     "k8s.io/client-go/kubernetes",
     "k8s.io/client-go/kubernetes/scheme",
@@ -1165,9 +1318,11 @@
     "k8s.io/client-go/listers/core/v1",
     "k8s.io/client-go/plugin/pkg/client/auth/gcp",
     "k8s.io/client-go/rest",
+    "k8s.io/client-go/testing",
     "k8s.io/client-go/tools/cache",
     "k8s.io/client-go/tools/clientcmd",
     "k8s.io/client-go/tools/record",
+    "k8s.io/client-go/util/flowcontrol",
     "k8s.io/client-go/util/workqueue",
     "k8s.io/code-generator/cmd/client-gen",
     "k8s.io/code-generator/cmd/conversion-gen",
